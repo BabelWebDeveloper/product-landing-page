@@ -1,0 +1,437 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+/* MAIN CODE */
+html{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+}
+:root{
+    --distance: 1.5rem;
+    --menu-background: #2993AB;
+    --product-width: 90%;
+}
+/* HEADER START HERE */
+header{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+main,
+footer{
+    position: relative;
+    top: 100px;
+}
+i{
+    position: absolute;
+    top: 25%;
+    right: 0;
+    margin-right: 10px;
+    color: black;
+}
+nav > label{
+    font-size: 40px;
+    margin-left: 5px;
+    display: none;
+}
+#toggle{
+    display: none;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    line-height: 100px;
+    height: 100px;
+    background: var(--menu-background);
+}
+nav::before{
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-image: url(img/logo.png);
+    background-size: 100px 100px;
+}
+#to-left,
+#to-right{
+    width: 500px;
+    margin: 0 50px;
+}
+#to-left{
+    text-align: right;
+}
+#to-right{
+    text-align: left;
+}
+#stay-updated-container{
+    position: absolute;
+    top: 85px;
+    right: 5%;
+    height: fit-content;
+    width: 25%;
+    background-color: black;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 20px;
+}
+#stay-updated-container > a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    word-wrap: wrap;
+    padding: 0.5rem;
+}
+.menu > a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.6rem;
+    margin: var(--distance);
+}
+@media only screen and (max-width: 770px){
+    nav{
+        text-align: left;
+        flex-direction: column;
+        justify-content: initial;
+    }
+    nav > label{
+        display: block;
+    }
+    .menu a{
+        display: block;
+    }
+    #to-left,
+    #to-right{
+        text-align: left;
+        width: 50%;
+        background: #2993abd2;
+        backdrop-filter: blur(5px);
+        margin: 0;
+    }
+    .menu{
+        display: none;
+    }
+    #toggle:checked ~ .menu{
+        display: block;
+    }
+    nav::before{
+        left: calc(50% - 50px);
+    }
+}
+/* HEADER END HERE */
+
+/* MAIN START HERE */
+#id-categories,
+#id-popular-products,
+#id-about-us,
+#id-see-us,
+#id-stay-updated{
+    padding-top: 100px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    font-size: 2.4rem;
+    margin: 1.5rem;
+}
+h3{
+    font-size: 2rem;
+    color: black;
+    margin: 0 1rem;
+}
+
+/* ______________________ */
+#categories{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+.icon{
+    width: 100%;
+    height: fit-content;
+    margin: 1vw auto;
+}
+.icon > a{
+    text-decoration: none;
+    color: black;
+}
+.icon > a > img{
+    width: 50%;
+    margin: 1.5rem auto;
+}
+/* ______________________ */
+#popular-products{
+    margin: 0 auto;
+    width: 80%;
+    place-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content min-content;
+    grid-template-areas: 
+    "tshirt"
+    "sportshoes"
+    "sportshorts";
+    grid-gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#product1{
+    width: var(--product-width);
+    position: relative;
+    display: grid;
+    grid-area: tshirt;
+    place-items: center;
+    padding: 2rem;
+}
+#product2{
+    width: var(--product-width);
+    position: relative;
+    display: grid;
+    grid-area: sportshoes;
+    place-items: center;
+    padding: 2rem;
+}
+#product3{
+    width: var(--product-width);
+    position: relative;
+    display: grid;
+    grid-area: sportshorts;
+    place-items: center;
+    padding: 2rem;
+}
+#product1 > img,
+#product2 > img,
+#product3 > img{
+    width: 50%;
+}
+.content{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 20px;
+    padding: var(--distance);
+}
+.content > p,
+.checkout{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+    margin: var(--distance);
+    color: white;
+}
+.checkout{
+    height: 3rem;
+    line-height: 3rem;
+    width: 80%;
+    text-align: center;
+    background-color: var(--menu-background);
+    border-radius: 10px;
+}
+#product1:hover > .content,
+#product2:hover > .content,
+#product3:hover > .content{
+    opacity: 1;
+    background: #2993aba9;
+    backdrop-filter: blur(5px);
+}
+@media only screen and (min-width: 870px){
+    #popular-products{
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "tshirt sportshoes"
+        "tshirt sportshorts";
+    }
+}
+/* ______________________ */
+
+#about-us{
+    position: static;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1.5rem;
+    font-size: 1.6rem;
+}
+/* ______________________ */
+
+#stay-updated{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "contact"
+    "sm";
+    place-items: center;
+    margin-bottom: var(--distance);
+}
+#div-email{
+    grid-area: contact;
+    width: 100%;
+    height: 150px;
+}
+#div-social{
+    grid-area: sm;
+    width: 100%;
+    height: 150px;
+}
+@media only screen and (min-width: 870px){
+    #stay-updated{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "contact sm";
+    }
+}
+#form,
+#social-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: fit-content;
+}
+#email-input{
+    border: 3px solid black;
+    border-radius: 20px;
+}
+#email-input,
+#div-button{
+    height: 3rem;
+    width: 70%;
+    margin: var(--distance);
+    text-align: center;
+}
+button{
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+#social-container-icons{
+    display: flex;
+    flex-direction: row;
+    margin: var(--distance);
+}
+#social-container-icons > img{
+    margin: 0 var(--distance);
+}
